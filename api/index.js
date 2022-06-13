@@ -6,6 +6,7 @@ const usersRoute  = require('./routes/users');
 const hotelsRoute  = require('./routes/hotels');
 const roomsRoute  = require('./routes/rooms');
 const cookieParser = require('cookie-parser');
+// const cors = require('cors')
 
 const app = express();
 dotenv.config();
@@ -28,6 +29,11 @@ mongoose.connection.on("connected", ()=>{
 })
 
 //middleware
+// app.use(cors({
+//     origin:"http://localhost:3000",
+//     methods:"GET"
+// })
+// );
 app.use(cookieParser())
 app.use(express.json())
 
