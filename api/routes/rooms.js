@@ -10,7 +10,7 @@ const { verifyAdmin } = require("../utils/verifyToken");
 router.post("/:hotelId",verifyAdmin, createRoom);
 //UPDATE
 router.put("/:id",verifyAdmin, updateRoom);
-router.put("availability/:id", updateRoomAvailability);
+router.put("/availability/:id", updateRoomAvailability);
 //DELETE
 router.delete("/:id/:hotelId",verifyAdmin, deleteRoom);
 //GET

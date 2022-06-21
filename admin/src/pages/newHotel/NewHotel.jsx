@@ -12,7 +12,7 @@ const NewHotel = () => {
     const [info, setInfo] = useState({});
     const [rooms, setRooms] = useState([]);
 
-    const { data, loading } = useFetch("/rooms");
+    const { data, loading } = useFetch("http://localhost:8800/api/rooms");
 
     const handleChange = (e) => {
         setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -52,7 +52,7 @@ const NewHotel = () => {
                 photos: list,
             };
 
-            await axios.post("/hotels", newhotel);
+            await axios.post("http://localhost:8800/api/hotels", newhotel);
         } catch (err) { console.log(err) }
     };
     return (
